@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const subpath = process.env.BASEPATH
+
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
@@ -13,6 +15,7 @@ const nextConfig: NextConfig = {
   //     }
   //   }
   // },
+  basePath: subpath,
   images: { unoptimized: true }
 };
 
