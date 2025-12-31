@@ -6,6 +6,7 @@ export default async function Home() {
   const repos = getRepositories();
   const recipes: RecipeList = {};
   for(const repository of repos) {
+    console.log('Processing repo:', repository)
     const repo: RecipeFiles = await fetch(`https://api.github.com/repos/${repository.author}/${repository.repository}/git/trees/${repository.branch}?recursive=1`, {cache: 'force-cache'}).then((res) => res.json());
     if(!repo.tree) {
       return (
@@ -18,10 +19,12 @@ export default async function Home() {
 
     const recipeList = repo.tree.filter((node) => (node.path.endsWith(".md") && node.path !== "README.md"));
     for (const element of recipeList) {
+      console.log('Processing recipe', element)
       const root = `https://raw.githubusercontent.com/${repository.author}/${repository.repository}/${repository.branch}/`;
       const recipeURL = new URL(element.path, root).href;
       const recipe = await fetch(recipeURL, {cache: 'force-cache'}).then((raw) => raw.text());
       const parsed = parseRecipe(element.path, recipe, repository);
+      console.log('Recipe parsed:',parsed)
       recipes[parsed.meta.slug] = parsed;
     };
   }

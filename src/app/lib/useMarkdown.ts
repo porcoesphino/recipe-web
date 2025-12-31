@@ -13,6 +13,7 @@ export function useMarkdown(markdown: string, options?: MarkedExtension): [strin
   }, [opt]);
 
   useEffect(() => {
+    console.log('Parsing markdown', markdown)
     const parsedDescription = marked.parse(markdown);
     if(typeof parsedDescription === 'string') {
       setOutput(parsedDescription);
@@ -21,6 +22,7 @@ export function useMarkdown(markdown: string, options?: MarkedExtension): [strin
         setOutput(value);
       })
     }
+    console.log('Successfully parsed markdown')
   }, [markdown, marked, opt]);
   return [output, setOptions];
 };
