@@ -16,7 +16,13 @@ const nextConfig: NextConfig = {
   //   }
   // },
   basePath: subpath,
-  images: { unoptimized: true }
+  images: { unoptimized: true },
+  compress: false,
+  compiler: {
+    styledComponents: {
+      minify: false
+    },
+  }
 };
 
 export default nextConfig;
