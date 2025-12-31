@@ -13,7 +13,6 @@ import PlusSVG from '@/app/svg/fontawesome/plus';
 import GithubSVG from '@/app/svg/github';
 import HeartSVG from '../svg/fontawesome/heart';
 import BasketSVG from '../svg/fontawesome/basket';
-import Flag from '@/app/svg/Flag';
 import { useSearchParams, usePathname } from 'next/navigation';
 import { useFavorite } from '../lib/useFavorite';
 import CopySVG from '../svg/fontawesome/copy';
