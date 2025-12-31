@@ -133,8 +133,8 @@ export default function Recipe({recipe, repos}: Props) {
       <div className={styles.layout}>
         <div className={styles.head}>
           <h1>
+            {recipe.title}
             <a href={`https://github.com/${recipe.meta.author}/${recipe.meta.repository}/blob/${recipe.meta.branch}/${recipe.meta.path}`} target='_blank' rel='noreferrer'>
-              {recipe.title}
               <GithubSVG aria-hidden="true" className={styles.github} />
             </a>
             <button onClick={toggleFavorite} aria-pressed={isFavorite()} title={isFavorite() ? 'Remove favorite' : 'Add favorite'} className={styles.favorite}><HeartSVG filled={isFavorite()} /></button>
@@ -147,10 +147,8 @@ export default function Recipe({recipe, repos}: Props) {
               <button onClick={share} title='Share' className={styles.share}><ShareSVG /></button>
             </Popover>
           </h1>
-          <a className={styles.author} href={`/${recipe.meta.author}`}>@{recipe.meta.author}</a>
           <div className={styles.tags}>
             {recipe.tags.map((tag, idx) => (<a href={`/?tag=${tag}`} key={idx} className={styles.tag}>{tag}</a>))}
-            <div className={styles.flag}><Flag code={recipe.language} /></div>
           </div>
         </div>
         <div className={styles.recipe}>

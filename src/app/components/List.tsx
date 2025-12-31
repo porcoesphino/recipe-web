@@ -98,12 +98,11 @@ export default function List({recipes, repo}: Props) {
       <div className={styles.cardbox}>
         {sortedRecipes.map((recipe) => {
           return (
-            <Link href={`/${recipe.meta.slug}`} key={recipe.meta.slug} className={styles.card} style={{'--rotate': `${Math.random() * 4 - 2}deg`} as React.CSSProperties}>
+            <Link href={`/${recipe.meta.slug}`} key={recipe.meta.slug} className={styles.card}>
               <ImageFallback src={recipe.imagePath} className={styles.preview} width={400} height={300} loading='lazy' alt="">
                 <div className={styles['no-preview']}><FoodSVG /></div>
               </ImageFallback>
               {isFavorite(recipe.meta.slug) && <div className={styles.favorite}><HeartSVG /></div>}
-              <div className={styles.author}>@{recipe.meta.author}</div>
               <div className={styles['card-content']}>
                 <h3 className={styles.title}>
                   {recipe.title}

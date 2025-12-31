@@ -10,7 +10,7 @@
     max-width: 50%;
     max-height: 300px;
     border-radius: 16px;
-    border: 1px solid var(--black);
+    border: 1px solid var(--primary-color);
 }
 
 .tags {
@@ -69,13 +69,12 @@
 }
 
 .yields-btn {
-    background: var(--black);
+    background: var(--primary-button-background);
     border-radius: 50%;
     width: 34px;
     height: 34px;
     border: none;
     padding: 0;
-    color: var(--light-gray);
     display: inline flex;
     justify-content: center;
     align-items: center;
@@ -86,7 +85,7 @@
     }
 
     &:active {
-        background: var(--black);
+        /* background: var(--primary-color); */
         color: var(--gray);
     }
 }
@@ -105,8 +104,10 @@
     width: 60px;
     -moz-appearance: textfield;
     appearance: textfield;
-    border: 1px solid var(--black);
+    border: 1px solid var(--primary-color);
     border-radius: 6px;
+
+    background-color: var(--soft-background);
 
     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
         -webkit-appearance: none;
@@ -122,11 +123,12 @@
 
 .ingredients {
     padding: 16px;
-    border: 1px solid var(--black);
-    border-radius: 16px;
+    border: 1px solid;
+    border-radius: 8px;
     line-height: 1.5em;
     display: flex;
     flex-direction: column;
+    margin-top: 1em;
 }
 
 .ingredients li:not(:first-child) {
@@ -141,6 +143,12 @@
 }
 .ingredients input {
     display: none;
+}
+
+.ingredients h2 {
+    font-size: 1.2em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
 @media screen {
@@ -167,7 +175,7 @@
 
 .github {
     display: inline;
-    margin-left: 0.25em;
+    margin-left: 1.5em;
 }
 
 .favorite {
@@ -178,14 +186,14 @@
     cursor: pointer;
 
     & svg {
-        margin-bottom: -0.25em;
+        margin-bottom: -0.5em;
     }
 }
 
 .shop-button {
     padding: 9px 8px;
-    background-color: var(--light-gray);
-    border: 1px solid var(--black);
+    background-color: var(--soft-background);
+    border: 1px solid var(--primary-color);
     border-radius: 6px;
     transition: .3s transform;
     margin-top: 10px;
@@ -193,7 +201,7 @@
 }
 
 .shop-button:hover {
-    transform: scale(1.15) rotate(var(--rotate, 2deg));
+    transform: scale(1.15);
 }
 
 .shop-button svg {
@@ -204,8 +212,8 @@
 .copied {
     padding: 10px;
     border-radius: 16px;
-    background: var(--black);
-    color: var(--light-gray);
+    background: var(--primary-color);
+    color: var(--soft-background);
     font-weight: 500;
 }
 
@@ -214,6 +222,7 @@
     background: none;
     padding: 8px;
     cursor: pointer;
+    margin-left: -0.3em;
 }
 
 .share svg {

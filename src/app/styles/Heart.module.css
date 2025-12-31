@@ -3,7 +3,7 @@
 }
 
 .bg {
-    fill: white;
+    fill: var(--soft-background);
     transform: scale(0.95);
     transform-origin: center;
 }
