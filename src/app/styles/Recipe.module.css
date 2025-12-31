@@ -21,8 +21,16 @@
 
 .tag {
     padding: 1px 4px;
-    border: 1px solid red;
     border-radius: 4px;
+    text-decoration: none;
+
+    color: var(--tag-text);
+    background-color: var(--tag-background);
+
+    &:hover {
+        color: var(--tag-hover-text);
+        background-color: var(--tag-hover-background);
+    }
 }
 
 .flag {
@@ -69,7 +77,6 @@
 }
 
 .yields-btn {
-    background: var(--primary-button-background);
     border-radius: 50%;
     width: 34px;
     height: 34px;
@@ -80,19 +87,12 @@
     align-items: center;
     cursor: pointer;
 
-    &:focus-visible {
-        background: var(--gray);
-    }
+    color: var(--tag-text);
+    background-color: var(--tag-background);
 
-    &:active {
-        /* background: var(--primary-color); */
-        color: var(--gray);
-    }
-}
-
-@media (hover: hover) {
-    .yields-btn:hover {
-        background: var(--gray);
+    &:hover {
+        color: var(--tag-hover-text);
+        background-color: var(--tag-hover-background);
     }
 }
 
@@ -186,8 +186,16 @@
     cursor: pointer;
 
     & svg {
-        margin-bottom: -0.5em;
+        /*
+         * On Chrome this icon is high, on Safari a negative bottom margin
+         * causes it to be low. The value isn't perfect because the parent
+         * header is defined in `em` units but all the icons are in px.
+         * TODO: Update all units to be rem.
+         */
+        margin-top: 0.4em;
     }
+
+    
 }
 
 .shop-button {
@@ -198,10 +206,6 @@
     transition: .3s transform;
     margin-top: 10px;
     margin-inline: auto;
-}
-
-.shop-button:hover {
-    transform: scale(1.15);
 }
 
 .shop-button svg {

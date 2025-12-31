@@ -12,8 +12,4 @@
     width: 22px;
     height: 20px;
   }
-
-  &:hover, &:focus-visible {
-    transform: scale(1.15);
-  }
 }

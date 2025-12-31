@@ -1,9 +1,13 @@
 .fg {
     fill: #c81229;
+    &:hover {
+      fill: var(--tag-hover-background);
+    }
 }
 
 .bg {
     fill: var(--soft-background);
-    transform: scale(0.95);
-    transform-origin: center;
+    &:hover {
+      fill: var(--tag-hover-background);
+    }
 }

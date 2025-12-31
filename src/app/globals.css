@@ -6,7 +6,10 @@
 
   --primary-color: rgb(39, 12, 5);
 
-  --primary-button-background: #a14327;
+  --tag-background: rgb(254, 202, 202);
+  --tag-text: rgb(127, 29, 29);
+  --tag-hover-background: rgb(245, 50, 0);
+  --tag-hover-text: rgb(255, 255, 255);
 
   --gray: #5c7b80;
 
