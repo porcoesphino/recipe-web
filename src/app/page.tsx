@@ -5,6 +5,7 @@ import List from "@/app/components/List";
 export default async function Home() {
   const repos = getRepositories();
   const recipes: RecipeList = {};
+  console.log('Found repos:', repos.length)
   for(const repository of repos) {
     console.log('Processing repo:', repository)
     const repo: RecipeFiles = await fetch(`https://api.github.com/repos/${repository.author}/${repository.repository}/git/trees/${repository.branch}?recursive=1`, {cache: 'force-cache'}).then((res) => res.json());
@@ -18,6 +19,7 @@ export default async function Home() {
     }
 
     const recipeList = repo.tree.filter((node) => (node.path.endsWith(".md") && node.path !== "README.md"));
+    console.log('Found recipes:', recipeList.length)
     for (const element of recipeList) {
       console.log('Processing recipe', element)
       const root = `https://raw.githubusercontent.com/${repository.author}/${repository.repository}/${repository.branch}/`;

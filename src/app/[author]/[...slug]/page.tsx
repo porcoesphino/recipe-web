@@ -41,6 +41,7 @@ async function getRecipe({author, slug}: {author: string, slug: string[]}) {
     const recipeURL = new URL(relativePath, root).href;
 
     const recipe = await fetch(recipeURL, {cache: 'force-cache'}).then((raw) => raw.text());
+    console.log('Fetched recipe:\n', recipe)
     return parseRecipe(relativePath, recipe, repo);
 }
 
