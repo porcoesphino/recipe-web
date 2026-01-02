@@ -7,7 +7,9 @@
 }
 
 .card {
-    --radius: 8px;
+    --card-radius: 8px;
+    --card-border-width: 2px;
+
     position: relative;
     display: inline-flex;
     min-height: 96px;
@@ -15,8 +17,8 @@
     flex-direction: column;
     justify-content: space-between;
 
-    /* border-radius: var(--radius);
-    border: 1px solid var(--primary-color); */
+    /* Add an invisible border so there is no jitter on hover. */
+    border: var(--card-border-width) solid rgba(255, 255, 255, 0);
 
     text-decoration: none;
     transition: transform 300ms;
@@ -24,7 +26,7 @@
 }
 
 .card .no-preview, .card .preview {
-    border-radius: var(--radius);
+    border-radius: var(--card-radius);
     border: 1px solid var(--primary-color);
     background: #fdfaf6;
 }
@@ -33,8 +35,8 @@
     z-index: 10;
 
     background-color: rgba(201, 77, 69, 0.13);
-    border: 2px solid;
-    border-radius: 10px;
+    border: var(--card-border-width) solid;
+    border-radius: var(--card-radius);
 
     & .author {
         opacity: 1;
@@ -70,8 +72,8 @@
     align-items: center;
     justify-content: center;
 
-    border-bottom-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
+    border-bottom-left-radius: var(--card-radius);
+    border-top-right-radius: var(--card-radius);
     border-left: 1px solid var(--primary-color);
     border-bottom: 1px solid var(--primary-color);
     opacity: 0;
@@ -87,8 +89,8 @@
     object-fit: cover;
     width: 100%;
     height: auto;
-    border-top-left-radius: calc(var(--radius) - 1px);
-    border-top-right-radius: calc(var(--radius) - 1px);
+    border-top-left-radius: calc(var(--card-radius) - 1px);
+    border-top-right-radius: calc(var(--card-radius) - 1px);
 }
 
 .no-preview {
@@ -127,7 +129,7 @@
     align-items: center;
     justify-content: center;
 
-    border-bottom-right-radius: var(--radius);
+    border-bottom-right-radius: var(--card-radius);
     border-right: 1px solid var(--primary-color);
     border-bottom: 1px solid var(--primary-color);
     border-left: 1px solid white;
