@@ -20,6 +20,7 @@
 
     text-decoration: none;
     transition: transform 300ms;
+    padding: 10px;
 }
 
 .card .no-preview, .card .preview {
@@ -30,6 +31,10 @@
 
 .card:hover, .card:focus-visible {
     z-index: 10;
+
+    background-color: rgba(201, 77, 69, 0.13);
+    border: 2px solid;
+    border-radius: 10px;
 
     & .author {
         opacity: 1;
